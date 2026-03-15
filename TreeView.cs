@@ -28,8 +28,11 @@ namespace tstTreeView
 
         private void ButtonSaveNewEle_Click(object sender, EventArgs e)
         {
-            TreeViewMain.SelectedNode.Text = TextBoxNameSE.Text;
-            TreeViewMain.SelectedNode.Tag = TextBoxValueSE.Text;
+            if (TreeViewMain.SelectedNode != null)
+            {
+                TreeViewMain.SelectedNode.Text = TextBoxNameSE.Text;
+                TreeViewMain.SelectedNode.Tag = TextBoxValueSE.Text;
+            }
         }
 
         private void ButtonSearchEle_Click(object sender, EventArgs e)

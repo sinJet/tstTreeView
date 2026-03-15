@@ -28,6 +28,11 @@ namespace tstTreeView
 
         private void BtnOK_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrWhiteSpace(TextBoxInputName.Text) || string.IsNullOrWhiteSpace(TextBoxInputValue.Text))
+            {
+                MessageBox.Show("Не все параметры введены");
+                return;
+            }
             DialogResult = DialogResult.OK;
             InputName = TextBoxInputName.Text;
             InputValue = TextBoxInputValue.Text;
